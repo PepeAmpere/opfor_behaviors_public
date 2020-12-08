@@ -1,0 +1,102 @@
+{
+  "name": "one by one",
+  "id": "a7e9da54-a283-4e11-adaf-10747818b7ab",
+  "type": "sequence",
+  "subtrees": [
+    {
+      "name": "Wait Forever",
+      "id": "54fb8240-b712-4558-8768-08f611884129",
+      "type": "waitForever"
+    }
+  ],
+  "unlinked-trees": [
+    {
+      "name": "move",
+      "id": "1c45aa7c-707c-4234-8c79-6296a80c7929",
+      "type": "move",
+      "meta": {
+        "nodesInfo": [
+          {
+            "id": "1c45aa7c-707c-4234-8c79-6296a80c7929",
+            "position": "1778,594"
+          }
+        ],
+        "editorObjects": []
+      },
+      "position": [
+        "return arg.orderData.position"
+      ]
+    },
+    {
+      "name": "Go crouch",
+      "id": "7939951f-98e9-46b9-915e-563517f232ae",
+      "type": "setStance",
+      "meta": {
+        "nodesInfo": [
+          {
+            "id": "7939951f-98e9-46b9-915e-563517f232ae",
+            "position": "1603,594"
+          }
+        ],
+        "editorObjects": []
+      },
+      "stance": [
+        "return Stance.Crouched"
+      ]
+    },
+    {
+      "name": "Go crouch",
+      "id": "7457aaa6-aa39-49af-8af1-52916683068d",
+      "type": "setStance",
+      "meta": {
+        "nodesInfo": [
+          {
+            "id": "7457aaa6-aa39-49af-8af1-52916683068d",
+            "position": "1962.5,600"
+          }
+        ],
+        "editorObjects": []
+      },
+      "stance": [
+        "local terrainType = EstimateTerrainTypes(self:GetPosition())",
+        "",
+        "local open = terrainType[TerrainType.Open]",
+        "local closed = terrainType[TerrainType.Closed]",
+        "local urban = terrainType[TerrainType.Urban]",
+        "",
+        "",
+        "if open > 0.5 then",
+        "    return Stance.Prone",
+        "end",
+        "if closed > 0.5 then",
+        "    return Stance.Crouched",
+        "end",
+        "if urban > 0.5 then",
+        "    return Stance.Standing",
+        "end"
+      ]
+    }
+  ],
+  "meta": {
+    "nodesInfo": [
+      {
+        "id": "a7e9da54-a283-4e11-adaf-10747818b7ab",
+        "position": "1783.5,233.5"
+      },
+      {
+        "id": "54fb8240-b712-4558-8768-08f611884129",
+        "position": "1787.5,362.5"
+      }
+    ],
+    "editorObjects": [],
+    "canvasSize": "3840,2400"
+  },
+  "parameters": [
+    {
+      "name": "orderData",
+      "isOptional": false,
+      "defaultValue": ""
+    }
+  ],
+  "locals": {}
+}

@@ -1,0 +1,10 @@
+{
+  "name": "opfor_behaviors_public",
+  "trees": [
+    "soldier\\safeMove.bt"
+  ],
+  "initScripts": [],
+  "parameters": {},
+  "capabilities": {},
+  "dynamicTargets": []
+}
